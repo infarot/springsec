@@ -12,7 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @ComponentScan(basePackages="com.dawid")
 @EnableWebMvc
-public class MvcConfiguration implements WebMvcConfigurer {
+public class SpringMvcConfiguration implements WebMvcConfigurer {
 
 	@Bean
 	public ViewResolver getViewResolver(){
