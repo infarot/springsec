@@ -11,13 +11,16 @@
 <html>
 <head>
     <title>Login Page</title>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/style.css"/>
+    <link type="text/css" rel="stylesheet" href="resources/style.css"/>
 </head>
 <body>
 <h3>My login page</h3>
 <form:form action="${pageContext.request.contextPath}/authenticateTheUser" method="post">
     <c:if test="${param.error != null}">
         <i class="error">Bad username or password!</i>
+    </c:if>
+    <c:if test="${param.logout != null}">
+        <i class="error">Successfully logged out!</i>
     </c:if>
     <p>
         <label>

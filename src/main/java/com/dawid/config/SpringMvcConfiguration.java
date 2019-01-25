@@ -31,11 +31,14 @@ public class SpringMvcConfiguration implements WebMvcConfigurer {
 				.addResourceLocations("/resources/");
 	}
 
+	/*
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/login").setViewName("login-page");
 		registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
 	}
+	*/
+
 
 	
 }

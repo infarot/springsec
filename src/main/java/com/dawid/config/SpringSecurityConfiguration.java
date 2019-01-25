@@ -16,7 +16,8 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         UserBuilder users = User.withDefaultPasswordEncoder();
-        auth.inMemoryAuthentication().withUser(users.username("janusz").password("123").roles("ROBOL"));
+        auth.inMemoryAuthentication().withUser(users.username("janusz").password("123").roles("WORKER"));
+        auth.inMemoryAuthentication().withUser(users.username("bogdan").password("123").roles("ADMIN"));
     }
 
     @Override
@@ -24,6 +25,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/resources/**").permitAll()
+                .antMatchers("/leaders/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
