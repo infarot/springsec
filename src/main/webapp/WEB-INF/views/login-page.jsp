@@ -36,5 +36,7 @@
     </p>
     <input type="submit" value="Login"/>
 </form:form>
+
+<a href="${pageContext.request.contextPath}/register/showRegistrationForm"><input type="submit" value="Register"/></a>
 </body>
 </html>

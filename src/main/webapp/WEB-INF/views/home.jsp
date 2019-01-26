@@ -20,9 +20,11 @@ Logged as: <security:authentication property="principal.username"/>
     Role: <security:authentication property="principal.authorities"/>
 </p>
 <p>This is the homepage!</p>
+<security:authorize access="hasRole('ADMIN')">
 <p>
     <a href="${pageContext.request.contextPath}/leaders">Leaders page</a>
 </p>
+</security:authorize>
 <form:form action="${pageContext.request.contextPath}/logout" method="post">
     <input class="error" type="submit" value="logout">
 </form:form>
