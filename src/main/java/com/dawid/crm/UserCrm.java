@@ -32,7 +32,7 @@ public class UserCrm {
 
     @NotNull(message = "is required")
     @Size(min = 1, message = "is required")
-    @ValidEmail
+    @ValidEmail(message = "invalid email address!")
     private String email;
 
     public UserCrm() {

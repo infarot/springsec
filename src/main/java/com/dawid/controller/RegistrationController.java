@@ -40,8 +40,8 @@ public class RegistrationController {
     public String processRegistrationForm(@Valid @ModelAttribute("crmUser") UserCrm userCrm, BindingResult theBindingResult, Model theModel) {
         // form validation
         if (theBindingResult.hasErrors()) {
-            System.out.println(theBindingResult.getAllErrors());
-            theModel.addAttribute("registrationError",theBindingResult.getAllErrors());
+            System.out.println(theBindingResult.getFieldError());
+            theModel.addAttribute("registrationError","please check if all fields are correct!" + theBindingResult.getFieldError());
             return "registration-form";
         }
         // check the database if user already exists
